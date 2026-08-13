@@ -1,0 +1,115 @@
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
+export default function Navbar() {
+  const location = useLocation();
+
+  return (
+    <nav className="sticky top-0 z-50 bg-black border-b border-white/10 px-6 py-4 flex justify-between items-center">
+      <Link to="/" className="text-xl font-bold tracking-widest text-white">DIRECTOR.</Link>
+      
+      <div className="flex items-center gap-6">
+        <div className="hidden md:flex gap-6">
+          <Link to="/work" className="text-xs uppercase text-gray-400 hover:text-white">Work</Link>
+          <Link to="/about" className="text-xs uppercase text-gray-400 hover:text-white">About</Link>
+        </div>
+        {/* Admin Button on Top Right */}
+        <Link 
+          to="/login" 
+          className="text-[10px] uppercase font-bold border border-white px-4 py-2 hover:bg-white hover:text-black transition-all"
+        >
+          Admin
+        </Link>
+      </div>
+    </nav>
+  );
+}
+```eof
+
+### 2. Create `src/components/Login.jsx` (OTP Login)
+Create this file. It handles the 2-step OTP process.
+
+```jsx:src/components/Login.jsx
+import React, { useState } from 'react';
+import { supabase } from '../supabaseClient';
+import { useNavigate } from 'react-router-dom';
+
+export default function Login() {
+  const [email, setEmail] = useState('');
+  const [token, setToken] = useState('');
+  const [step, setStep] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const handleSendOtp = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithOtp({ email });
+    if (error) setError(error.message);
+    else setStep(2);
+    setLoading(false);
+  };
+
+  const handleVerifyOtp = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const { error } = await supabase.auth.verifyOtp({ email, token, type: 'magiclink' });
+    if (error) setError(error.message);
+    else navigate('/admin');
+    setLoading(false);
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-white flex items-center justify-center p-6">
+      <div className="w-full max-w-sm border border-gray-800 p-8">
+        <h2 className="text-xl font-black uppercase mb-6">{step === 1 ? 'Admin Access' : 'Enter Code'}</h2>
+        {error && <p className="text-red-500 text-xs mb-4">{error}</p>}
+        
+        {step === 1 ? (
+          <form onSubmit={handleSendOtp} className="space-y-4">
+            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-gray-900 p-3 text-sm" required />
+            <button className="w-full bg-white text-black p-3 text-xs font-bold uppercase">{loading ? 'Sending...' : 'Send OTP'}</button>
+          </form>
+        ) : (
+          <form onSubmit={handleVerifyOtp} className="space-y-4">
+            <input type="text" placeholder="6-digit code" value={token} onChange={(e) => setToken(e.target.value)} className="w-full bg-gray-900 p-3 text-sm" required />
+            <button className="w-full bg-white text-black p-3 text-xs font-bold uppercase">{loading ? 'Verifying...' : 'Verify & Enter'}</button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
+```eof
+
+### 3. Quick Update to `App.jsx`
+Make sure your `App.jsx` router knows about these paths:
+
+```jsx:src/App.jsx
+// ... existing code imports ...
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+
+export default function App() {
+  return (
+    <HashRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Dashboard />} />
+        {/* ... other routes ... */}
+      </Routes>
+      <Footer />
+    </HashRouter>
+  );
+}
+```eof
+
+**One last check:**
+1. In your `Login.jsx` form, `signInWithOtp` will send the email. Ensure your Supabase Auth "Email" provider is enabled in the dashboard.
+2. The user **must** exist in your Supabase Auth `Users` table already to receive the email.
+
+Try this out! It keeps your files clean and gives you the exact login flow you wanted.
