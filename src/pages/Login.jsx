@@ -223,13 +223,16 @@ export default function Login({ session }) {
 
                   <input
                     type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    autoComplete="one-time-code"
                     maxLength={6}
                     required
                     autoFocus
                     value={otp}
                     onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
                     placeholder="••••••"
-                    className="w-full bg-black/80 border border-amber-500/50 rounded-xl py-3.5 text-center text-2xl tracking-[0.5em] font-black text-amber-400 placeholder-zinc-700 focus:outline-none focus:border-amber-400 transition-colors"
+                    className="w-full bg-black/80 border border-amber-500/50 rounded-xl py-3.5 text-center text-2xl tracking-[0.4em] sm:tracking-[0.5em] font-black text-amber-400 placeholder-zinc-700 focus:outline-none focus:border-amber-400 transition-colors"
                   />
                   <span className="text-[9px] text-zinc-500 block uppercase">
                     Check your email inbox or spam folder for the code

@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* Viewport Overflow & Touch Handling */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+}
+
+/* Ensure images don't overflow small screens */
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+
 /* ========================================================= */
 /* THEME COLOR SYSTEM                                        */
 /* ========================================================= */
