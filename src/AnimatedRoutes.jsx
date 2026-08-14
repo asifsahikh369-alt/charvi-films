@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 
 // Page Transition Wrapper
 import PageTransition from './components/PageTransition';
+import AdminRoute from './components/AdminRoute';
 
 // Pages
 import Home from './pages/Home';
@@ -13,7 +14,7 @@ import About from './pages/About';
 import Clients from './pages/Clients';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import Admin from './pages/Admin';
 import UnderMaintenance from './pages/UnderMaintenance';
 
 export default function AnimatedRoutes({ session, setSession }) {
@@ -73,25 +74,19 @@ export default function AnimatedRoutes({ session, setSession }) {
         <Route
           path="/login"
           element={
-            session ? (
-              <Navigate to="/admin" replace />
-            ) : (
-              <PageTransition>
-                <Login setSession={setSession} />
-              </PageTransition>
-            )
+            <PageTransition>
+              <Login session={session} />
+            </PageTransition>
           }
         />
         <Route
           path="/admin"
           element={
-            session ? (
+            <AdminRoute session={session}>
               <PageTransition>
-                <Dashboard setSession={setSession} />
+                <Admin session={session} setSession={setSession} />
               </PageTransition>
-            ) : (
-              <Navigate to="/login" replace />
-            )
+            </AdminRoute>
           }
         />
       </Routes>
