@@ -47,7 +47,7 @@ export default function Navbar({ session }) {
               <img 
                 src="/charvi-logo.png" 
                 alt="Charvi Films Logo" 
-                className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(234,179,8,0.4)] group-hover:scale-105 transition-transform duration-300"
+                className="h-11 sm:h-12 max-h-11 sm:max-h-12 w-auto shrink-0 object-contain filter drop-shadow-[0_0_10px_rgba(234,179,8,0.4)] group-hover:scale-105 transition-transform duration-300"
               />
 
               <div className="flex flex-col pb-2 sm:pb-2.5">
