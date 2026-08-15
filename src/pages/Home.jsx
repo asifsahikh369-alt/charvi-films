@@ -317,7 +317,7 @@ export default function Home({ session }) {
                   </h2>
 
                   <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light">
-                    <strong className="text-white font-semibold">Charvi Films</strong> refers to <strong className="text-white font-semibold">Charvi Films (I) Private Limited</strong>, an active non-government registered business entity located in Mumbai, Maharashtra (near the Mira Road & Andheri production hubs). Owned and produced by executive producer <strong className="text-white font-semibold">Sarvan Sharma</strong>, with visionary film direction by <strong className="text-white font-semibold">Sangeet Kumar</strong>, our studio bridges mainstream Bollywood aesthetics with high-energy regional cinema across Bhojpuri, Punjabi, and commercial feature films.
+                    <strong className="text-white font-semibold">Charvi Films</strong> refers to <strong className="text-white font-semibold">Charvi Films (I) Private Limited</strong>, an active non-government registered business entity located in Mumbai, Maharashtra (near the Mira Road & Andheri production hubs). Owned, produced, and directed by executive producer <strong className="text-white font-semibold">Sarvan Sharma</strong>, our studio bridges mainstream Bollywood aesthetics with high-energy regional cinema across Bhojpuri, Punjabi, and commercial feature films.
                   </p>
 
                   <div className="flex flex-wrap items-center gap-4 pt-2 font-mono text-xs">

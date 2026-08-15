@@ -176,7 +176,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-zinc-500 border-t border-white/10 pt-8">
           <p>© 2026 CHARVI FILMS // ALL RIGHTS RESERVED</p>
           <p className="text-indigo-400 uppercase tracking-widest font-bold">
-            DIRECTED BY SANGEET KUMAR
+            DIRECTED BY SARVAN SHARMA
           </p>
         </div>
 

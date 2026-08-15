@@ -46,8 +46,8 @@ export default function About({ session }) {
                                         <span className="text-indigo-400">SARVAN SHARMA</span>
                                     </div>
                                     <div className="flex justify-between">
-                                        <span>DIRECTOR:</span>
-                                        <span>SANGEET KUMAR</span>
+                                        <span>DIRECTOR & CREATIVE HEAD:</span>
+                                        <span className="text-indigo-400">SARVAN SHARMA</span>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ export default function About({ session }) {
                                     CHARVI FILMS (I) PRIVATE LIMITED //
                                 </span>
                                 <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-wider text-white">
-                                    SANGEET KUMAR
+                                    SARVAN SHARMA
                                 </h1>
                                 <p className="font-mono text-xs text-zinc-400 uppercase">
                                     FILM DIRECTOR & CREATIVE HEAD
@@ -71,7 +71,7 @@ export default function About({ session }) {
                             </div>
 
                             <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-light">
-                                <strong className="text-white font-semibold">Charvi Films</strong> refers to <strong className="text-white font-semibold">Charvi Films (I) Private Limited</strong>, an active non-government registered business entity located in Mumbai, Maharashtra (with registration details near Mira Road & Andheri). Owned and produced by executive producer <strong className="text-white font-semibold">Sarvan Sharma</strong>, with film direction led by <strong className="text-white font-semibold">Sangeet Kumar</strong>, our studio delivers high-impact visual storytelling across regional and national cinema.
+                                <strong className="text-white font-semibold">Charvi Films</strong> refers to <strong className="text-white font-semibold">Charvi Films (I) Private Limited</strong>, an active non-government registered business entity located in Mumbai, Maharashtra (with registration details near Mira Road & Andheri). Owned, produced, and directed by executive producer <strong className="text-white font-semibold">Sarvan Sharma</strong>, our studio delivers high-impact visual storytelling across regional and national cinema.
                             </p>
 
                             <blockquote className="p-6 bg-zinc-900/50 border-l-2 border-indigo-500 rounded-r-xl font-mono text-xs text-zinc-300 space-y-2">
