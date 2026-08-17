@@ -27,6 +27,7 @@ export default function Navbar({ session }) {
     { name: 'WORK', path: '/work' },
     { name: 'ABOUT', path: '/about' },
     { name: 'CLIENTS', path: '/clients' },
+    { name: 'UPCOMING', path: '/upcoming' },
     { name: 'CONTACT', path: '/contact' },
   ];
 

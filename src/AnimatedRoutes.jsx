@@ -13,6 +13,7 @@ import Work from './pages/Work';
 import About from './pages/About';
 import Clients from './pages/Clients';
 import Contact from './pages/Contact';
+import Upcoming from './pages/Upcoming';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
 import UnderMaintenance from './pages/UnderMaintenance';
@@ -52,6 +53,14 @@ export default function AnimatedRoutes({ session, setSession }) {
           element={
             <PageTransition>
               <Clients session={session} />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/upcoming"
+          element={
+            <PageTransition>
+              <Upcoming session={session} />
             </PageTransition>
           }
         />
