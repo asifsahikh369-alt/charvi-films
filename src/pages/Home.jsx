@@ -215,7 +215,7 @@ export default function Home({ session }) {
             {/* ========================================================= */}
             {/* HERO SECTION WITH TIMED REVEAL */}
             {/* ========================================================= */}
-            <section ref={heroRef} className="h-screen flex flex-col items-center justify-center relative px-6 select-none overflow-hidden">
+            <section ref={heroRef} className="relative w-full h-[100dvh] min-h-[550px] bg-[#050505] overflow-hidden flex flex-col items-center justify-center select-none px-6">
                 {/* 1. Background Video Blend (Triggers videoEnded when complete) */}
                 <HeroVideoBlend onVideoEnd={() => setVideoEnded(true)} />
 

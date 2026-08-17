@@ -1,7 +1,8 @@
 // src/components/Hero.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Sparkles, Aperture, Compass } from 'lucide-react';
+import Spline from '@splinetool/react-spline';
 
 // Humanoid Fairy SVG Silhouette Component
 function HumanoidFairy({ glowColor, coreColor, accentIcon: AccentIcon }) {
@@ -46,6 +47,17 @@ function HumanoidFairy({ glowColor, coreColor, accentIcon: AccentIcon }) {
 }
 
 export default function Hero() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768 || window.matchMedia('(pointer: coarse)').matches);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const { scrollYProgress } = useScroll();
     const smoothProgress = useSpring(scrollYProgress, { stiffness: 50, damping: 20 });
 
@@ -74,61 +86,75 @@ export default function Hero() {
         <div className="relative bg-black text-white font-sans overflow-hidden">
 
             {/* ========================================================= */}
-            {/* CONVERGING HUMANOID FAIRIES CONTAINER (Fixed viewport overlay) */}
+            {/* CONVERGING HUMANOID FAIRIES CONTAINER (Desktop only) */}
             {/* ========================================================= */}
-            <div className="fixed inset-0 pointer-events-none z-50 flex items-center justify-center">
+            {!isMobile && (
+                <div className="fixed inset-0 pointer-events-none z-50 hidden md:flex items-center justify-center">
 
-                {/* FAIRY 01: Top-Left Spawn -> Catalogue */}
-                <motion.div
-                    style={{ x: fairy1X, y: fairy1Y, scale: fairy1Scale }}
-                    initial={{ x: "-100vw", y: "-50vh", opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                    className="absolute"
-                >
-                    <HumanoidFairy
-                        glowColor="bg-amber-500/40"
-                        coreColor="text-amber-300"
-                        accentIcon={Sparkles}
-                    />
-                </motion.div>
+                    {/* FAIRY 01: Top-Left Spawn -> Catalogue */}
+                    <motion.div
+                        style={{ x: fairy1X, y: fairy1Y, scale: fairy1Scale }}
+                        initial={{ x: "-100vw", y: "-50vh", opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+                        className="absolute"
+                    >
+                        <HumanoidFairy
+                            glowColor="bg-amber-500/40"
+                            coreColor="text-amber-300"
+                            accentIcon={Sparkles}
+                        />
+                    </motion.div>
 
-                {/* FAIRY 02: Top-Right Spawn -> Selected Work */}
-                <motion.div
-                    style={{ x: fairy2X, y: fairy2Y, scale: fairy2Scale }}
-                    initial={{ x: "100vw", y: "-50vh", opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-                    className="absolute"
-                >
-                    <HumanoidFairy
-                        glowColor="bg-purple-600/40"
-                        coreColor="text-indigo-300"
-                        accentIcon={Aperture}
-                    />
-                </motion.div>
+                    {/* FAIRY 02: Top-Right Spawn -> Selected Work */}
+                    <motion.div
+                        style={{ x: fairy2X, y: fairy2Y, scale: fairy2Scale }}
+                        initial={{ x: "100vw", y: "-50vh", opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                        className="absolute"
+                    >
+                        <HumanoidFairy
+                            glowColor="bg-purple-600/40"
+                            coreColor="text-indigo-300"
+                            accentIcon={Aperture}
+                        />
+                    </motion.div>
 
-                {/* FAIRY 03: Bottom Spawn -> Footer */}
-                <motion.div
-                    style={{ x: fairy3X, y: fairy3Y, scale: fairy3Scale }}
-                    initial={{ x: "0vw", y: "100vh", opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                    className="absolute"
-                >
-                    <HumanoidFairy
-                        glowColor="bg-emerald-500/40"
-                        coreColor="text-cyan-300"
-                        accentIcon={Compass}
-                    />
-                </motion.div>
+                    {/* FAIRY 03: Bottom Spawn -> Footer */}
+                    <motion.div
+                        style={{ x: fairy3X, y: fairy3Y, scale: fairy3Scale }}
+                        initial={{ x: "0vw", y: "100vh", opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                        className="absolute"
+                    >
+                        <HumanoidFairy
+                            glowColor="bg-emerald-500/40"
+                            coreColor="text-cyan-300"
+                            accentIcon={Compass}
+                        />
+                    </motion.div>
 
-            </div>
+                </div>
+            )}
 
             {/* ========================================================= */}
             {/* HERO SECTION DISPLAY */}
             {/* ========================================================= */}
-            <section className="min-h-screen flex flex-col items-center justify-center relative px-6 border-b border-white/10 select-none">
+            <section className="relative w-full h-[100dvh] min-h-[550px] bg-[#050505] overflow-hidden flex flex-col items-center justify-center border-b border-white/10 select-none">
+
+                {/* 3D Spline Canvas with fixed sizing container / Mobile Radial Light Fallback */}
+                {isMobile ? (
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-amber-500/20 rounded-full blur-[100px] pointer-events-none" />
+                ) : (
+                    <div className="absolute inset-0 w-full h-full z-0 pointer-events-auto overflow-hidden spline-wrapper gpu-accelerate">
+                        <Spline
+                            scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"
+                            className="w-full h-full scale-100 touch-none pointer-events-auto"
+                        />
+                    </div>
+                )}
 
                 {/* Ambient Backlight */}
                 <div className="absolute w-96 h-96 bg-purple-900/20 rounded-full blur-[120px] pointer-events-none" />

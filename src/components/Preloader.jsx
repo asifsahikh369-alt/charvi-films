@@ -55,7 +55,7 @@ export default function Preloader({ onComplete }) {
         initial={{ x: 0 }}
         animate={isDone ? { x: '-100%' } : { x: 0 }}
         transition={{ duration: 0.55, ease: curtainEase }}
-        className="absolute inset-y-0 left-0 w-1/2 bg-zinc-950 border-r border-white/10 pointer-events-auto flex items-center justify-end pr-4"
+        className="absolute inset-y-0 left-0 w-1/2 bg-zinc-950 border-r border-white/10 pointer-events-auto flex items-center justify-end pr-4 curtain-panel gpu-accelerate"
       >
         <div className="w-px h-32 bg-linear-to-b from-transparent via-indigo-500/40 to-transparent" />
       </motion.div>
@@ -65,7 +65,7 @@ export default function Preloader({ onComplete }) {
         initial={{ x: 0 }}
         animate={isDone ? { x: '100%' } : { x: 0 }}
         transition={{ duration: 0.55, ease: curtainEase }}
-        className="absolute inset-y-0 right-0 w-1/2 bg-zinc-950 border-l border-white/10 pointer-events-auto flex items-center justify-start pl-4"
+        className="absolute inset-y-0 right-0 w-1/2 bg-zinc-950 border-l border-white/10 pointer-events-auto flex items-center justify-start pl-4 curtain-panel gpu-accelerate"
       >
         <div className="w-px h-32 bg-linear-to-b from-transparent via-indigo-500/40 to-transparent" />
       </motion.div>

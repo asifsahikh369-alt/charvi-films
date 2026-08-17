@@ -1,5 +1,5 @@
 // src/components/FairyGuide.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Sparkles, Aperture, Compass } from 'lucide-react';
 
@@ -44,6 +44,14 @@ function HumanoidFairy({ glowColor, coreColor, accentIcon: AccentIcon }) {
 }
 
 export default function FairyGuide() {
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+    useEffect(() => {
+        if (window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window) {
+            setIsTouchDevice(true);
+        }
+    }, []);
+
     const { scrollYProgress } = useScroll();
     const smoothProgress = useSpring(scrollYProgress, { stiffness: 50, damping: 20 });
 
@@ -71,8 +79,10 @@ export default function FairyGuide() {
     const fairy3Scale = useTransform(smoothProgress, [0, 0.9], [1, 0.7]);
     // No opacity dimming for fairy 3 as it lands on the final section.
 
+    if (isTouchDevice) return null;
+
     return (
-        <div className="fixed inset-0 pointer-events-none z-50 flex items-center justify-center">
+        <div className="fixed inset-0 pointer-events-none z-50 hidden md:flex items-center justify-center">
 
             {/* Fairy Glow Overlay Wrapper */}
             <div
