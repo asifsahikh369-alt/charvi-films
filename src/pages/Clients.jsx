@@ -16,7 +16,7 @@ const CLIENTS_DATA = [
         industry: 'NATIONAL & REGIONAL CINEMA',
         category: 'DIRECTOR',
         photo: '/clients/sangeet-kumar.jpg',
-        objectPos: 'object-top',
+        objectPos: 'center 20%',
         googleUrl: 'https://www.google.com/search?q=Sangeet+kumar',
         bio: 'Visionary Director driving high-impact narrative and commercial cinema across regional markets.',
         stats: '27+ DIRECTED REELS',
@@ -29,6 +29,7 @@ const CLIENTS_DATA = [
         industry: 'BHOJPURI CINEMA',
         category: 'BHOJPURI',
         photo: '/clients/rani-chattarji.jpg',
+        objectPos: 'center 15%',
         googleUrl: 'https://www.google.com/search?q=rani-chattarji',
         bio: 'Iconic leading superstar of Bhojpuri Cinema with a legendary career of box-office blockbusters.',
         stats: '150+ FILMS',
@@ -41,6 +42,7 @@ const CLIENTS_DATA = [
         industry: 'BHOJPURI & INDIAN CINEMA',
         category: 'BHOJPURI',
         photo: '/clients/raj-premi.jpg',
+        objectPos: 'center 15%',
         googleUrl: 'https://www.google.com/search?q=Raj+Premi',
         bio: 'Powerhouse actor known for intense dramatic lead roles and villain characters across major regional cinema.',
         stats: '80+ MOVIES',
@@ -53,6 +55,7 @@ const CLIENTS_DATA = [
         industry: 'MAINSTREAM & PUNJABI CINEMA',
         category: 'MAINSTREAM',
         photo: '/clients/shakti-kapoor.jpg',
+        objectPos: 'center top',
         googleUrl: 'https://www.google.com/search?q=shakti+kapoor',
         bio: 'Legendary Indian actor featuring in hundreds of iconic films, collaborating on special regional projects.',
         stats: '500+ FILMS',
@@ -65,6 +68,7 @@ const CLIENTS_DATA = [
         industry: 'MAINSTREAM & REGIONAL CINEMA',
         category: 'MAINSTREAM',
         photo: '/clients/pramod-moutho.jpg',
+        objectPos: 'center top',
         googleUrl: 'https://www.google.com/search?q=PRAMOD+MOUTHO',
         bio: 'Acclaimed character actor famed for legendary dramatic villain roles and theatrical performances.',
         stats: '100+ FILMS',
@@ -77,6 +81,7 @@ const CLIENTS_DATA = [
         industry: 'PUNJABI MUSIC INDUSTRY',
         category: 'PUNJABI',
         photo: '/clients/masa-ali.jpg',
+        objectPos: 'center top',
         googleUrl: 'https://www.google.com/search?q=masha+ali',
         bio: 'High-energy Punjabi vocalist and live performer delivering hit music video releases.',
         stats: '20+ MUSIC REELS',
@@ -89,7 +94,7 @@ const CLIENTS_DATA = [
         industry: 'PUNJABI MUSIC INDUSTRY',
         category: 'PUNJABI',
         photo: '/clients/rishika-kapoor.jpg',
-        objectPos: 'object-top',
+        objectPos: 'center 15%',
         googleUrl: 'https://www.google.com/search?q=rishika+kapoor',
         bio: 'Sensational Punjabi musical artist collaborating on cinematic concept-driven music videos.',
         stats: '15+ REELS',
@@ -186,7 +191,8 @@ export default function Clients({ session }) {
                                             <img
                                                 src={client.photo}
                                                 alt={client.name}
-                                                className={`w-full h-full object-cover ${client.objectPos || 'object-center'} filter contrast-110 group-hover/img:scale-105 transition-transform duration-700`}
+                                                style={{ objectPosition: client.objectPos || 'center top' }}
+                                                className="w-full h-full object-cover filter contrast-110 group-hover/img:scale-105 transition-transform duration-700"
                                                 onError={(e) => {
                                                     e.target.style.display = 'none';
                                                 }}
