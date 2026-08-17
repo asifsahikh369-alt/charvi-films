@@ -14,7 +14,7 @@ export default function Upcoming({ session }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white flex flex-col selection:bg-amber-500 selection:text-black">
+    <div className="min-h-screen bg-zinc-950 text-white flex flex-col selection:bg-amber-500 selection:text-black">
       
       {/* 1. Global Navbar */}
       <Navbar session={session} />
