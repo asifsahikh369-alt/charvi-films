@@ -147,9 +147,9 @@ export default function CinemaModal({ project, onClose }) {
               <div className="space-y-4">
                 <div className="flex items-center justify-between pb-2 border-b border-white/5">
                   <span className="text-zinc-500 flex items-center gap-2">
-                    <Film className="w-3.5 h-3.5" /> Director
+                    <Film className="w-3.5 h-3.5" /> Producer
                   </span>
-                  <span className="text-white font-medium">Asif Shaikh</span>
+                  <span className="text-white font-medium">Sarvan Sharma</span>
                 </div>
 
                 <div className="flex items-center justify-between pb-2 border-b border-white/5">
