@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function Upcoming({ session }) {
-  const [isRevealed, setIsRevealed] = useState(false);
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [email, setEmail] = useState('');
 
@@ -47,13 +46,11 @@ export default function Upcoming({ session }) {
           {/* Poster Image Container */}
           <div className="relative aspect-[2/3] w-full overflow-hidden bg-black flex items-center justify-center">
             
-            {/* The Movie Poster with Blur Effect */}
+            {/* The Movie Poster with Permanent Blur Effect */}
             <img 
               src="/nikal-padi-poster.jpg" 
-              alt="Nikal Padi - Charvi Films"
-              className={`w-full h-full object-cover object-center transform transition-all duration-700 ${
-                isRevealed ? 'blur-0 scale-100' : 'blur-xl scale-105 opacity-75'
-              }`}
+              alt="Charvi Films Upcoming Theatrical Feature"
+              className="w-full h-full object-cover object-center transform blur-2xl scale-110 opacity-75 select-none pointer-events-none"
             />
 
             {/* Dark Vignette Overlay */}
@@ -70,28 +67,21 @@ export default function Upcoming({ session }) {
             {/* Top Badge: Status */}
             <div className="absolute top-8 left-8 right-8 flex justify-between items-center text-[10px] font-mono tracking-widest text-zinc-400">
               <span className="bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-                PROJ: NIKAL PADI
+                PROJ: CONFIDENTIAL SLATE
               </span>
               <span className="bg-amber-500/20 text-amber-400 border border-amber-400/40 px-3 py-1.5 rounded-full font-bold">
                 POST-PRODUCTION
               </span>
             </div>
 
-            {/* Center Lock / Reveal Action */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10 pointer-events-auto">
-              <span className="text-xs font-mono tracking-[0.4em] text-amber-400 uppercase mb-2">
+            {/* Center Lock Overlay */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10 pointer-events-none">
+              <span className="text-xs font-mono tracking-[0.4em] text-amber-400 uppercase mb-3">
                 CHARVI FILMS PRESENTS
               </span>
-              <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.9)]">
-                NIKAL PADI
-              </h2>
-
-              <button
-                onClick={() => setIsRevealed(!isRevealed)}
-                className="mt-6 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-mono text-xs uppercase tracking-widest transition-all duration-300 transform hover:scale-105"
-              >
-                {isRevealed ? '🔒 Hide First Look' : '👁️ Tap to Peek Poster'}
-              </button>
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-zinc-300 font-mono text-xs uppercase tracking-widest">
+                🔒 TOP SECRET // TITLE UNDER WRAPS
+              </div>
             </div>
 
             {/* Bottom Floating Marquee: COMING SOON IN CINEMAS */}
