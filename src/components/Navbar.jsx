@@ -74,7 +74,7 @@ export default function Navbar({ session }) {
                       : 'text-zinc-400 hover:text-white'
                   }`}
                 >
-                  {link.name} //
+                  {link.name}
                 </Link>
               );
             })}
@@ -127,9 +127,9 @@ export default function Navbar({ session }) {
                   to="/login"
                   onClick={playShutterClick}
                   onMouseEnter={playHoverTick}
-                  className="text-zinc-400 hover:text-white text-[10px] uppercase tracking-widest border border-white/10 hover:border-indigo-500/50 px-3 py-1.5 rounded-full bg-black/40 transition-colors"
+                  className="px-3.5 py-1.5 rounded-full border border-white/10 text-xs font-mono text-zinc-300 bg-black/40 hover:border-indigo-500/50 hover:text-white transition-colors flex items-center gap-1.5"
                 >
-                  PORTAL ↗
+                  <span>Portal Access</span>
                 </Link>
               )}
             </div>

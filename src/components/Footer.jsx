@@ -140,14 +140,14 @@ export default function Footer() {
               <h3 className="text-xs font-black uppercase tracking-widest text-indigo-400">
                 {section.title}
               </h3>
-              <ul className="space-y-2.5 text-[11px] font-sans font-light text-zinc-400">
+              <ul className="space-y-2.5 text-xs font-sans font-light text-zinc-400">
                 {section.links.map((linkName) => (
                   <li key={linkName}>
                     <Link
                       to="/maintenance"
                       onClick={playShutterClick}
                       onMouseEnter={playHoverTick}
-                      className="hover:text-white transition-colors block uppercase tracking-wider hover:translate-x-1 duration-200"
+                      className="hover:text-white transition-colors block tracking-wider hover:translate-x-1 duration-200"
                     >
                       {linkName}
                     </Link>
@@ -164,17 +164,17 @@ export default function Footer() {
             to="/contact"
             onClick={playShutterClick}
             onMouseEnter={playHoverTick}
-            className="text-xs font-mono text-zinc-400 hover:text-white transition-colors uppercase tracking-wider inline-block"
+            className="text-xs font-mono text-zinc-400 hover:text-white transition-colors tracking-wider inline-block"
           >
-            contact :- <span className="text-indigo-400 font-bold hover:underline">sarvansharma14@gmail.com</span>
+            Contact: <span className="text-indigo-400 font-bold hover:underline">sarvansharma14@gmail.com</span>
           </Link>
         </div>
 
         {/* ========================================================= */}
         {/* BOTTOM LEGAL & COPYRIGHT BAR */}
         {/* ========================================================= */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-zinc-500 border-t border-white/10 pt-8">
-          <p>© 2026 CHARVI FILMS // ALL RIGHTS RESERVED</p>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 border-t border-white/10 pt-8">
+          <p>© 2026 Charvi Films. All rights reserved.</p>
           <p className="text-indigo-400 uppercase tracking-widest font-bold">
             DIRECTED BY SARVAN SHARMA
           </p>

@@ -19,7 +19,7 @@ import { playShutterClick, playHoverTick } from '../utils/audio';
 const PRODUCTION_PIPELINES = [
   {
     num: '01',
-    title: 'PRE-PRODUCTION & SCRIPT LAB',
+    title: 'Pre-Production & Script Lab',
     icon: Clapperboard,
     tag: 'CONCEPT TO SCREENPLAY',
     desc: 'From initial storyboarding and character arcs to multi-state location scouting across Mumbai, Punjab, and regional hubs.',
@@ -27,7 +27,7 @@ const PRODUCTION_PIPELINES = [
   },
   {
     num: '02',
-    title: 'PRINCIPAL PHOTOGRAPHY',
+    title: 'Principal Photography',
     icon: Camera,
     tag: 'CINEMATIC EXECUTION',
     desc: 'Equipped with RED 8K VistaVision systems, anamorphic optics, and heavy aerial drone rigs to capture high-octane visual storytelling.',
@@ -35,7 +35,7 @@ const PRODUCTION_PIPELINES = [
   },
   {
     num: '03',
-    title: 'POST-PRODUCTION & COLOR',
+    title: 'Post-Production & Color',
     icon: Layers,
     tag: '4K HDR MASTERING',
     desc: 'In-house DaVinci Resolve color grading suites, Dolby Atmos sound design, and custom VFX pipelines for theatrical and digital delivery.',
@@ -43,7 +43,7 @@ const PRODUCTION_PIPELINES = [
   },
   {
     num: '04',
-    title: 'DISTRIBUTION & TALENT HUB',
+    title: 'Distribution & Talent Hub',
     icon: Tv,
     tag: 'THEATRICAL & OTT RELEASE',
     desc: 'End-to-end liaison with regional cinema networks, theatrical distributors, and major digital streaming platforms.',
@@ -223,7 +223,7 @@ export default function Home({ session }) {
                 <div className="absolute w-96 h-96 bg-purple-900/20 rounded-full blur-[120px] pointer-events-none" />
 
                 {/* 2. Title Typography (Slides from Left & Right when video ends) */}
-                <div className="relative flex items-center justify-center gap-6 sm:gap-16 md:gap-20 text-4xl sm:text-7xl md:text-8xl font-black uppercase tracking-widest text-white z-10 overflow-hidden py-4">
+                <h1 className="relative flex items-center justify-center gap-3 sm:gap-6 text-4xl sm:text-7xl md:text-8xl font-black tracking-tight text-white z-10 overflow-hidden py-4">
                     {/* CHARVI (Slides in from Left) */}
                     <motion.span
                         initial={{ x: '-150%', opacity: 0 }}
@@ -234,9 +234,6 @@ export default function Home({ session }) {
                         CHARVI
                     </motion.span>
 
-                    {/* Convergence Center Gap */}
-                    <div className="w-12 sm:w-24 md:w-32 h-16" />
-
                     {/* FILMS (Slides in from Right) */}
                     <motion.span
                         initial={{ x: '150%', opacity: 0 }}
@@ -246,17 +243,17 @@ export default function Home({ session }) {
                     >
                         FILMS
                     </motion.span>
-                </div>
+                </h1>
 
                 {/* 3. Subtitle & Hero Actions (Fade in smoothly after title enters) */}
                 <motion.div
                     initial={{ opacity: 0, y: 15 }}
                     animate={videoEnded ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
                     transition={{ duration: 1, delay: 0.6, ease: 'easeOut' }}
-                    className="mt-8 flex flex-col items-center gap-6 z-10"
+                    className="mt-6 flex flex-col items-center gap-6 z-10"
                 >
-                    <p className="font-mono text-xs sm:text-sm text-zinc-400 uppercase tracking-[0.4em] text-center">
-                        Cinematic Production Studio // Visual Archive
+                    <p className="font-mono text-xs sm:text-sm text-zinc-400 tracking-wider text-center">
+                        Cinematic Production Studio & Visual Archive
                     </p>
 
                     {/* 🎬 1-CLICK SHOWREEL CTA BUTTON */}
@@ -272,10 +269,10 @@ export default function Home({ session }) {
                             });
                         }}
                         onMouseEnter={playHoverTick}
-                        className="group px-6 py-3 bg-white text-black font-mono font-bold text-xs uppercase tracking-widest rounded-full hover:bg-indigo-400 hover:text-black transition-all duration-300 flex items-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_35px_rgba(99,102,241,0.5)] transform hover:scale-105 cursor-pointer"
+                        className="group px-6 py-3 bg-white text-black font-mono font-bold text-xs tracking-wider rounded-full hover:bg-indigo-400 hover:text-black transition-all duration-300 flex items-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_35px_rgba(99,102,241,0.5)] transform hover:scale-105 cursor-pointer"
                     >
                         <span className="w-2 h-2 rounded-full bg-red-600 animate-ping" />
-                        <span>[WATCH 2026 SHOWREEL ▶]</span>
+                        <span>Watch 2026 Showreel ▶</span>
                     </button>
                 </motion.div>
 
@@ -283,10 +280,10 @@ export default function Home({ session }) {
                     initial={{ opacity: 0 }}
                     animate={videoEnded ? { opacity: 1 } : { opacity: 0 }}
                     transition={{ duration: 1, delay: 0.9 }}
-                    className="absolute bottom-10 flex flex-col items-center gap-2 font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-500 z-10"
+                    className="absolute bottom-8 flex flex-col items-center gap-2 font-mono text-xs font-semibold text-zinc-300 z-10"
                 >
-                    <span>[SCROLL TO UNLOCK ARCHIVE]</span>
-                    <div className="w-px h-6 bg-linear-to-b from-white to-transparent animate-bounce mt-1" />
+                    <span className="tracking-wider">Scroll to Unlock Archive</span>
+                    <div className="w-px h-8 bg-linear-to-b from-indigo-400 to-transparent animate-bounce mt-1" />
                 </motion.div>
             </section>
 
@@ -309,11 +306,11 @@ export default function Home({ session }) {
                 <div className="lg:col-span-7 space-y-6">
                   <div className="inline-flex items-center gap-2 font-mono text-xs text-indigo-500 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1.5 rounded-full uppercase tracking-widest">
                     <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-                    <span>[CHARVI FILMS // PRODUCTION ECOSYSTEM]</span>
+                    <span>[CHARVI FILMS — PRODUCTION ECOSYSTEM]</span>
                   </div>
 
-                  <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-wider leading-tight text-white">
-                    CRAFTING HIGH-OCTANE VISUAL CINEMA ACROSS NATIONWIDE MARKETS
+                  <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-white">
+                    Crafting High-Octane Visual Cinema Across Nationwide Markets
                   </h2>
 
                   <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light">
@@ -344,8 +341,8 @@ export default function Home({ session }) {
                     className="p-8 sm:p-10 rounded-3xl bg-linear-to-br from-indigo-950/40 via-zinc-900/60 to-black/80 border border-indigo-500/30 shadow-2xl relative overflow-hidden font-mono space-y-6"
                   >
                     <div className="flex justify-between items-start">
-                      <span className="text-[10px] text-indigo-400 uppercase tracking-widest font-bold">
-                        [STUDIO CREATIVE DIRECTIVE]
+                      <span className="text-xs text-indigo-400 uppercase tracking-widest font-bold">
+                        [Studio Creative Directive]
                       </span>
                       <Award className="w-6 h-6 text-indigo-400" />
                     </div>
@@ -357,9 +354,9 @@ export default function Home({ session }) {
                     <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
                       <div>
                         <p className="text-white font-bold uppercase">SARVAN SHARMA (PRODUCER)</p>
-                        <p className="text-[10px] text-zinc-400">CHARVI FILMS (I) PRIVATE LIMITED // MUMBAI</p>
+                        <p className="text-xs text-zinc-400">Charvi Films (I) Private Limited — Mumbai</p>
                       </div>
-                      <span className="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[9px] uppercase tracking-wider border border-emerald-500/30">
+                      <span className="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs uppercase tracking-wider border border-emerald-500/30">
                         ACTIVE SETS
                       </span>
                     </div>
@@ -387,10 +384,10 @@ export default function Home({ session }) {
                     <span className="text-3xl sm:text-5xl font-black text-white group-hover:text-indigo-500 transition-colors block mb-2">
                       {stat.value}
                     </span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-white block">
+                    <span className="text-xs font-bold uppercase tracking-wider text-white block">
                       {stat.label}
                     </span>
-                    <span className="text-[9px] text-zinc-400 uppercase tracking-widest block mt-1">
+                    <span className="text-xs text-zinc-400 tracking-wider block mt-1">
                       {stat.sub}
                     </span>
                   </motion.div>
@@ -407,11 +404,11 @@ export default function Home({ session }) {
                       <TrendingUp className="w-4 h-4" />
                       <span>[PRODUCTION WORKFLOW PIPELINE]</span>
                     </div>
-                    <h3 className="text-2xl sm:text-4xl font-black uppercase tracking-wider text-white">
-                      THE CINEMA EXECUTION ENGINE
+                    <h3 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
+                      The Cinema Execution Engine
                     </h3>
                   </div>
-                  <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest max-w-xs">
+                  <p className="font-mono text-xs text-zinc-400 tracking-wider max-w-xs">
                     Seamless end-to-end technical & narrative infrastructure.
                   </p>
                 </div>
@@ -441,7 +438,7 @@ export default function Home({ session }) {
                         <div className="space-y-4 relative z-10">
                           <div className="flex items-center justify-between font-mono text-xs">
                             <span className="text-indigo-500 font-bold text-sm">[{pipeline.num}]</span>
-                            <span className="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-[9px] uppercase tracking-widest">
+                            <span className="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs tracking-wider">
                               {pipeline.tag}
                             </span>
                           </div>
@@ -450,7 +447,7 @@ export default function Home({ session }) {
                             <div className="p-3 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 group-hover:scale-110 transition-transform">
                               <IconComponent className="w-5 h-5" />
                             </div>
-                            <h4 className="text-xl font-black uppercase text-white tracking-wider group-hover:text-indigo-400 transition-colors">
+                            <h4 className="text-xl font-bold text-white tracking-tight group-hover:text-indigo-400 transition-colors">
                               {pipeline.title}
                             </h4>
                           </div>
@@ -463,7 +460,7 @@ export default function Home({ session }) {
                         {/* Technical Deliverable Bullet Checklist */}
                         <div className="pt-4 border-t border-black/5 dark:border-white/10 font-mono text-xs space-y-2 relative z-10">
                           {pipeline.highlights.map((item, idx) => (
-                            <div key={idx} className="flex items-center gap-2 text-[11px] text-zinc-400">
+                            <div key={idx} className="flex items-center gap-2 text-xs text-zinc-400">
                               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                               <span>{item}</span>
                             </div>
@@ -483,53 +480,41 @@ export default function Home({ session }) {
             <section
                 ref={selectedRef}
                 id="selected-work"
-                className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 sm:px-12 border-t border-white/5"
+                className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 sm:px-12 border-t border-white/5 space-y-8"
             >
-                {/* Section Header */}
-                <div className="border-b border-white/10 pb-6 mb-10 flex flex-col md:flex-row md:items-baseline justify-between gap-4">
-                    <div>
-                        <h2 className="text-xs font-mono uppercase tracking-[0.4em] text-zinc-400 flex items-center gap-3">
-                            <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-                            [N°02 SELECTED ARCHIVE // LIVE STREAM]
+                {/* Section Header with Prominent Title and Adjacent Portal Action (Issues 8 & 10) */}
+                <div className="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div className="flex items-center gap-4 flex-wrap">
+                        <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center gap-3">
+                            <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse" />
+                            Selected Archive
                         </h2>
+                        <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest hidden sm:inline">
+                          — Live Stream
+                        </span>
                     </div>
+
                     <Link
                         to="/login"
-                        className="self-start md:self-auto text-[9px] font-mono uppercase tracking-widest text-zinc-400 hover:text-white transition-colors border border-white/10 hover:border-indigo-500/50 px-3.5 py-1.5 rounded-full bg-black/30 backdrop-blur-sm"
+                        className="self-start md:self-auto px-3.5 py-1.5 rounded-full border border-white/10 text-xs font-mono text-zinc-300 bg-black/40 hover:border-indigo-500/50 hover:text-white transition-colors flex items-center gap-1.5"
                     >
-                        Portal Access //
+                        <span>Portal Access</span>
+                        <ArrowRight className="w-3.5 h-3.5 text-indigo-400" />
                     </Link>
                 </div>
 
-                {/* SEARCH & FILTER CONTROLS BAR */}
-                <div className="mb-12 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6 font-mono text-xs">
-
-                    {/* Category Filter Pills */}
-                    <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-                        <SlidersHorizontal className="w-3.5 h-3.5 text-zinc-500 shrink-0 mr-1" />
-                        {CATEGORIES.map((cat) => (
-                            <button
-                                key={cat}
-                                onClick={() => setSelectedCategory(cat)}
-                                className={`px-3.5 py-2 rounded-full border text-[10px] tracking-wider uppercase transition-all duration-300 shrink-0 ${selectedCategory === cat
-                                    ? 'bg-indigo-600/80 border-indigo-400 text-white shadow-[0_0_15px_rgba(99,102,241,0.4)]'
-                                    : 'bg-black/40 border-white/10 text-zinc-400 hover:text-white hover:border-white/20'
-                                    }`}
-                            >
-                                {cat} //
-                            </button>
-                        ))}
-                    </div>
+                {/* SEARCH & FILTER CONTROLS BAR (Grouped together - Issue 9) */}
+                <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-start gap-4 font-mono text-xs pb-4">
 
                     {/* Search Input */}
-                    <div className="relative flex-1 max-w-md">
+                    <div className="relative w-full lg:w-72">
                         <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
                         <input
                             type="text"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             placeholder="SEARCH BY TITLE OR SPECS..."
-                            className="w-full bg-black/40 border border-white/10 rounded-full pl-10 pr-10 py-2.5 text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/40 transition-all font-mono uppercase tracking-wider"
+                            className="w-full bg-black/40 border border-white/10 rounded-full pl-10 pr-10 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/40 transition-all font-mono uppercase tracking-wider"
                         />
                         {searchTerm && (
                             <button
@@ -541,11 +526,28 @@ export default function Home({ session }) {
                         )}
                     </div>
 
+                    {/* Category Filter Pills */}
+                    <div className="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-none">
+                        <SlidersHorizontal className="w-3.5 h-3.5 text-zinc-500 shrink-0 mr-1" />
+                        {CATEGORIES.map((cat) => (
+                            <button
+                                key={cat}
+                                onClick={() => setSelectedCategory(cat)}
+                                className={`px-3.5 py-1.5 rounded-full border text-xs tracking-wider transition-all duration-300 shrink-0 ${selectedCategory === cat
+                                    ? 'bg-indigo-600/80 border-indigo-400 text-white shadow-[0_0_15px_rgba(99,102,241,0.4)]'
+                                    : 'bg-black/40 border-white/10 text-zinc-400 hover:text-white hover:border-white/20'
+                                    }`}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+
                 </div>
 
                 {/* RESULTS GRID */}
                 {loading ? (
-                    <div className="flex flex-col items-center justify-center py-32 gap-3 font-mono text-[10px] uppercase tracking-widest text-zinc-600">
+                    <div className="flex flex-col items-center justify-center py-32 gap-3 font-mono text-xs uppercase tracking-widest text-zinc-600">
                         <div className="h-5 w-5 border-2 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin" />
                         <span>Syncing Deployed Feeds...</span>
                     </div>
@@ -555,9 +557,9 @@ export default function Home({ session }) {
                         {(searchTerm || selectedCategory !== 'ALL') && (
                             <button
                                 onClick={() => { setSearchTerm(''); setSelectedCategory('ALL'); }}
-                                className="text-[10px] text-indigo-400 hover:underline uppercase"
+                                className="text-xs text-indigo-400 hover:underline uppercase"
                             >
-                                RESET FILTERS //
+                                RESET FILTERS
                             </button>
                         )}
                     </div>
@@ -587,19 +589,20 @@ export default function Home({ session }) {
                                         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/20 opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
 
                                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                                            <div className="px-4 py-2 rounded-full bg-black/70 backdrop-blur-md border border-indigo-500/40 text-indigo-300 font-mono text-[10px] tracking-widest uppercase flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                            <div className="px-4 py-2 rounded-full bg-black/70 backdrop-blur-md border border-indigo-500/40 text-indigo-300 font-mono text-xs tracking-widest uppercase flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-ping" />
-                                                PLAY REEL //
+                                                Play Reel
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="mt-4 px-1">
                                         <div className="flex items-center justify-between gap-4">
-                                            <h3 className="text-sm font-black uppercase tracking-wider text-zinc-300 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+                                            {/* Removed uppercase class (Issue 5) */}
+                                            <h3 className="text-sm font-bold tracking-tight text-zinc-300 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
                                                 {project.title}
                                             </h3>
-                                            <span className="text-[10px] font-mono text-zinc-500 group-hover:text-indigo-400 lowercase shrink-0 transition-colors">
+                                            <span className="text-xs font-mono text-zinc-500 group-hover:text-indigo-400 lowercase shrink-0 transition-colors">
                                                 /{project.categories?.slug || 'general'}
                                             </span>
                                         </div>

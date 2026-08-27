@@ -35,11 +35,8 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* 2. Tactical Camera Custom Cursor */}
+      {/* 3. Tactical Camera Custom Cursor */}
       <CameraCursor />
-
-      {/* 3. Global Floating Theme Toggle */}
-      <ThemeToggle />
 
       {/* 4. Animated Route Transitions Handler (Curtain Panel Transition) */}
       <AnimatedRoutes session={session} setSession={setSession} />

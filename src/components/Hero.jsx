@@ -89,7 +89,7 @@ export default function Hero() {
             {/* CONVERGING HUMANOID FAIRIES CONTAINER (Desktop only) */}
             {/* ========================================================= */}
             {!isMobile && (
-                <div className="fixed inset-0 pointer-events-none z-50 hidden md:flex items-center justify-center">
+                <div aria-hidden="true" className="fixed inset-0 pointer-events-none z-50 hidden md:flex items-center justify-center">
 
                     {/* FAIRY 01: Top-Left Spawn -> Catalogue */}
                     <motion.div
@@ -160,26 +160,23 @@ export default function Hero() {
                 <div className="absolute w-96 h-96 bg-purple-900/20 rounded-full blur-[120px] pointer-events-none" />
 
                 {/* Title Group */}
-                <div className="relative flex items-center justify-center gap-8 sm:gap-16 md:gap-24 text-4xl sm:text-7xl md:text-8xl font-black uppercase tracking-widest text-white z-10">
+                <h1 className="relative flex items-center justify-center gap-3 sm:gap-6 text-4xl sm:text-7xl md:text-8xl font-black tracking-tight text-white z-10">
                     <motion.span initial={{ x: -80, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
                         CHARVI
                     </motion.span>
 
-                    {/* Convergence Center Threshold Gap */}
-                    <div className="w-16 sm:w-28 md:w-36 h-20" />
-
                     <motion.span initial={{ x: 80, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
                         FILMS
                     </motion.span>
-                </div>
+                </h1>
 
-                <p className="mt-8 font-mono text-xs sm:text-sm text-zinc-400 uppercase tracking-[0.4em] text-center z-10">
-                    Cinematic Production Studio // Visual Archive
+                <p className="mt-6 font-mono text-xs sm:text-sm text-zinc-400 tracking-wider text-center z-10">
+                    Cinematic Production Studio & Visual Archive
                 </p>
 
-                <div className="absolute bottom-10 flex flex-col items-center gap-2 font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-500 z-10">
-                    <span>[SCROLL TO UNLOCK ARCHIVE]</span>
-                    <div className="w-px h-6 bg-linear-to-b from-white to-transparent animate-bounce mt-1" />
+                <div className="absolute bottom-8 flex flex-col items-center gap-2 font-mono text-xs font-semibold text-zinc-300 z-10">
+                    <span className="tracking-wider">Scroll to Unlock Archive</span>
+                    <div className="w-px h-8 bg-linear-to-b from-indigo-400 to-transparent animate-bounce mt-1" />
                 </div>
             </section>
 
