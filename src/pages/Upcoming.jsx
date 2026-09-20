@@ -69,19 +69,19 @@ export default function Upcoming({ session }) {
         
         {/* --- SECTION HEADER --- */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 font-mono text-[11px] tracking-[0.3em] uppercase mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 font-mono text-xs tracking-[0.3em] uppercase mb-4">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
-            <span>CONFIDENTIAL // OFFICIAL SLATE</span>
+            <span>CONFIDENTIAL • OFFICIAL SLATE</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-white">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white">
             Upcoming <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500">
               Releases & Slate
             </span>
           </h1>
 
-          <p className="mt-4 text-zinc-400 font-mono text-xs sm:text-sm tracking-wider uppercase">
+          <p className="mt-4 text-zinc-400 font-mono text-xs sm:text-sm tracking-wider">
             Charvi Films presents upcoming theatrical feature & music video releases.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function Upcoming({ session }) {
                   </div>
 
                   {/* Top Badges */}
-                  <div className="absolute top-6 left-6 right-6 flex justify-between items-center text-[10px] font-mono tracking-widest text-zinc-400 z-20">
+                  <div className="absolute top-6 left-6 right-6 flex justify-between items-center text-xs font-mono tracking-widest text-zinc-400 z-20">
                     <span className="bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
                       {isProjectRevealed ? <Sparkles className="w-3 h-3 text-amber-400" /> : <Lock className="w-3 h-3 text-amber-400" />}
                       <span>{isProjectRevealed ? `UNLOCKED: ${project.title}` : `PROJ: ${project.badge}`}</span>
@@ -175,7 +175,7 @@ export default function Upcoming({ session }) {
                             <Eye className="w-4 h-4 text-amber-400" />
                           </div>
 
-                          <span className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase bg-black/60 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10">
+                          <span className="text-xs font-mono text-zinc-400 tracking-widest uppercase bg-black/60 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10">
                             Tap poster to unblur {project.type}
                           </span>
                         </motion.div>
@@ -188,7 +188,7 @@ export default function Upcoming({ session }) {
                           transition={{ duration: 0.4 }}
                           className="absolute top-20 flex flex-col items-center gap-1 pointer-events-none"
                         >
-                          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-emerald-500/40 text-emerald-400 font-mono text-[11px] tracking-widest uppercase shadow-md">
+                          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-emerald-500/40 text-emerald-400 font-mono text-xs tracking-widest uppercase shadow-md">
                             <Unlock className="w-3.5 h-3.5" />
                             <span>{project.title} UNLOCKED</span>
                             <EyeOff className="w-3.5 h-3.5 ml-1 opacity-70" />
@@ -211,25 +211,25 @@ export default function Upcoming({ session }) {
                 {/* Project Details Footer */}
                 <div className="p-6 bg-zinc-950 border-t border-white/10 text-center font-mono flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-lg font-bold text-white uppercase tracking-wider mb-1 flex items-center justify-center gap-2">
+                    <h2 className="text-lg font-bold text-white tracking-wider mb-1 flex items-center justify-center gap-2">
                       <Icon className="w-4 h-4 text-amber-400" />
                       <span>{project.title}</span>
-                    </h3>
-                    <p className="text-[11px] text-amber-400/90 uppercase tracking-widest mb-4">
+                    </h2>
+                    <p className="text-xs text-amber-400/90 tracking-widest mb-4">
                       {project.type}
                     </p>
 
                     <div className="flex justify-around items-center text-xs text-zinc-400 border-t border-b border-white/5 py-3 mb-4">
                       <div>
-                        <span className="text-[10px] text-zinc-500 block uppercase">Format</span>
+                        <span className="text-xs text-zinc-500 block uppercase">Format</span>
                         <span className="text-white font-semibold">{project.format}</span>
                       </div>
                       <div>
-                        <span className="text-[10px] text-zinc-500 block uppercase">Audio</span>
+                        <span className="text-xs text-zinc-500 block uppercase">Audio</span>
                         <span className="text-white font-semibold">{project.audio}</span>
                       </div>
                       <div>
-                        <span className="text-[10px] text-zinc-500 block uppercase">Studio</span>
+                        <span className="text-xs text-zinc-500 block uppercase">Studio</span>
                         <span className="text-white font-semibold">{project.studio}</span>
                       </div>
                     </div>

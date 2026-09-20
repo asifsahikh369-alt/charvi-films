@@ -110,15 +110,15 @@ export default function Contact({ session }) {
                 {/* ========================================================= */}
                 <div className="border-b border-white/10 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div className="space-y-3">
-                        <div className="inline-flex items-center gap-2 font-mono text-xs text-indigo-400 bg-indigo-950/40 border border-indigo-500/30 px-3.5 py-1.5 rounded-full uppercase tracking-widest">
+                        <div className="inline-flex items-center gap-2 font-mono text-xs text-indigo-400 bg-indigo-950/40 border border-indigo-500/30 px-3.5 py-1.5 rounded-full tracking-widest">
                             <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-                            <span>[PRODUCTION REQUISITION TERMINAL]</span>
+                            <span>[Production Requisition Terminal]</span>
                         </div>
-                        <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-wider text-white">
-                            INITIATE PROJECT
+                        <h1 className="text-4xl sm:text-6xl font-black tracking-wider text-white">
+                            Initiate Project
                         </h1>
-                        <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest">
-                            Films // Narrative Films // Music Videos // Talent Bookings
+                        <p className="font-mono text-xs text-zinc-400 tracking-widest">
+                            Films • Narrative Films • Music Videos • Talent Bookings
                         </p>
                     </div>
 
@@ -126,7 +126,7 @@ export default function Contact({ session }) {
                         <Clock className="w-5 h-5 text-indigo-400 shrink-0" />
                         <div>
                             <p className="text-white font-bold uppercase">RESPONSE WINDOW</p>
-                            <p className="text-[10px] text-zinc-500">WITHIN 12–24 HOURS</p>
+                            <p className="text-xs text-zinc-400">WITHIN 12–24 HOURS</p>
                         </div>
                     </div>
                 </div>
@@ -139,9 +139,9 @@ export default function Contact({ session }) {
                     {/* Left Column: Direct Official Contact Specs */}
                     <div className="lg:col-span-5 space-y-8 font-mono">
                         <div className="bg-zinc-900/40 border border-white/10 p-8 rounded-2xl space-y-6">
-                            <h2 className="text-sm font-bold uppercase tracking-widest text-indigo-400 flex items-center gap-2 border-b border-white/10 pb-4">
+                            <h2 className="text-sm font-bold tracking-widest text-indigo-400 flex items-center gap-2 border-b border-white/10 pb-4">
                                 <Film className="w-4 h-4" />
-                                [OFFICIAL PRODUCTION HEADQUARTERS]
+                                [Official Production Headquarters]
                             </h2>
 
                             <div className="space-y-6 text-xs">
@@ -151,7 +151,7 @@ export default function Contact({ session }) {
                                         <Mail className="w-4 h-4" />
                                     </div>
                                     <div>
-                                        <span className="text-[10px] text-zinc-500 uppercase tracking-widest block">OFFICIAL EMAIL</span>
+                                        <span className="text-xs text-zinc-400 uppercase tracking-widest block">OFFICIAL EMAIL</span>
                                         <a href="mailto:sarvansharma14@gmail.com" className="text-white font-bold hover:text-indigo-300 transition-colors">
                                             sarvansharma14@gmail.com
                                         </a>
@@ -164,7 +164,7 @@ export default function Contact({ session }) {
                                         <Phone className="w-4 h-4" />
                                     </div>
                                     <div>
-                                        <span className="text-[10px] text-zinc-500 uppercase tracking-widest block">TALENT & PRODUCTION LINE</span>
+                                        <span className="text-xs text-zinc-400 uppercase tracking-widest block">TALENT & PRODUCTION LINE</span>
                                         <a href="tel:+919699701903" className="text-white font-bold hover:text-indigo-300 transition-colors">
                                             +91 9699701903
                                         </a>
@@ -177,8 +177,8 @@ export default function Contact({ session }) {
                                         <MapPin className="w-4 h-4" />
                                     </div>
                                     <div>
-                                        <span className="text-[10px] text-zinc-500 uppercase tracking-widest block">STUDIO LOCATION</span>
-                                        <span className="text-zinc-300">MUMBAI // PUNJAB // BHOJPURI CINEMA HUBS</span>
+                                        <span className="text-xs text-zinc-400 uppercase tracking-widest block">STUDIO LOCATION</span>
+                                        <span className="text-zinc-300">MUMBAI • PUNJAB • BHOJPURI CINEMA HUBS</span>
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +186,7 @@ export default function Contact({ session }) {
 
                         {/* Quick Requisition Guidelines Box */}
                         <div className="p-6 bg-indigo-950/20 border border-indigo-500/30 rounded-2xl text-xs space-y-2">
-                            <span className="text-indigo-400 font-bold uppercase tracking-wider text-[10px]">
+                            <span className="text-indigo-400 font-bold uppercase tracking-wider text-xs">
                                 NOTICE FOR TALENT & STARCAST BOOKINGS:
                             </span>
                             <p className="text-zinc-400 leading-relaxed font-sans text-xs">
@@ -220,7 +220,7 @@ export default function Contact({ session }) {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {/* Full Name */}
                                 <div>
-                                    <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-[10px]">
+                                    <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-xs">
                                         FULL NAME / COMPANY *
                                     </label>
                                     <input
@@ -235,7 +235,7 @@ export default function Contact({ session }) {
 
                                 {/* Email */}
                                 <div>
-                                    <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-[10px]">
+                                    <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-xs">
                                         EMAIL ADDRESS *
                                     </label>
                                     <input
@@ -252,7 +252,7 @@ export default function Contact({ session }) {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {/* Phone */}
                                 <div>
-                                    <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-[10px]">
+                                    <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-xs">
                                         WHATSAPP / PHONE NUMBER
                                     </label>
                                     <input
@@ -266,7 +266,7 @@ export default function Contact({ session }) {
 
                                 {/* Project Category */}
                                 <div>
-                                    <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-[10px]">
+                                    <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-xs">
                                         PROJECT CATEGORY *
                                     </label>
                                     <select
@@ -285,7 +285,7 @@ export default function Contact({ session }) {
 
                             {/* Budget Range */}
                             <div>
-                                <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-[10px]">
+                                <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-xs">
                                     ESTIMATED BUDGET RANGE
                                 </label>
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -294,7 +294,7 @@ export default function Contact({ session }) {
                                             type="button"
                                             key={budget}
                                             onClick={() => setFormData({ ...formData, budget_range: budget })}
-                                            className={`py-2.5 px-3 rounded-xl border text-[10px] uppercase transition-all ${formData.budget_range === budget
+                                            className={`py-2.5 px-3 rounded-xl border text-xs uppercase transition-all ${formData.budget_range === budget
                                                     ? 'bg-indigo-600 border-indigo-400 text-white font-bold'
                                                     : 'bg-black/40 border-white/10 text-zinc-400 hover:text-white'
                                                 }`}
@@ -307,7 +307,7 @@ export default function Contact({ session }) {
 
                             {/* Message */}
                             <div>
-                                <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-[10px]">
+                                <label className="block text-zinc-400 mb-2 uppercase tracking-wider text-xs">
                                     PRODUCTION OVERVIEW & REQUISITION DETAILS *
                                 </label>
                                 <textarea
@@ -324,14 +324,14 @@ export default function Contact({ session }) {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-all flex items-center justify-center gap-2 shadow-xl hover:scale-[1.01]"
+                                className="w-full py-4 bg-white text-black font-bold tracking-widest rounded-xl hover:bg-zinc-200 transition-all flex items-center justify-center gap-2 shadow-xl hover:scale-[1.01]"
                             >
                                 {loading ? (
-                                    <span>TRANSMITTING REQUISITION...</span>
+                                    <span>Transmitting Requisition...</span>
                                 ) : (
                                     <>
                                         <Send className="w-4 h-4" />
-                                        <span>TRANSMIT TO PRODUCTION LINE</span>
+                                        <span>Transmit to Production Line</span>
                                     </>
                                 )}
                             </button>

@@ -20,12 +20,12 @@ export default function About({ session }) {
                 {/* ========================================================= */}
                 <section id="director" className="relative">
                     {/* Section Header Tag */}
-                    <div className="border-b border-white/10 pb-4 mb-12 flex justify-between items-baseline font-mono text-xs text-zinc-400 uppercase tracking-widest">
+                    <div className="border-b border-white/10 pb-4 mb-12 flex justify-between items-baseline font-mono text-xs text-zinc-400 tracking-widest">
                         <span className="flex items-center gap-2">
                             <User className="w-3.5 h-3.5 text-indigo-400" />
-                            DIRECTOR ARCHIVE
+                            Director Archive
                         </span>
-                        <span>CREATIVE DIRECTION</span>
+                        <span>Creative Direction</span>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -40,7 +40,7 @@ export default function About({ session }) {
                                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
 
                                 {/* HUD Overlay Metadata */}
-                                <div className="absolute bottom-6 left-6 right-6 font-mono text-[10px] text-zinc-300 uppercase tracking-widest space-y-1">
+                                <div className="absolute bottom-6 left-6 right-6 font-mono text-xs text-zinc-300 uppercase tracking-widest space-y-1">
                                     <div className="flex justify-between border-b border-white/20 pb-1">
                                         <span>OWNER & PRODUCER:</span>
                                         <span className="text-indigo-400">SARVAN SHARMA</span>
@@ -59,14 +59,14 @@ export default function About({ session }) {
                         {/* Right Column: Bio & Vision Statement */}
                         <div className="lg:col-span-7 space-y-6">
                             <div className="space-y-2">
-                                <span className="font-mono text-xs text-indigo-400 uppercase tracking-[0.3em]">
-                                    CHARVI FILMS (I) PRIVATE LIMITED //
+                                <span className="font-mono text-xs text-indigo-400 tracking-[0.3em]">
+                                    CHARVI FILMS (I) PRIVATE LIMITED
                                 </span>
-                                <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-wider text-white">
+                                <h1 className="text-4xl sm:text-6xl font-black tracking-wider text-white">
                                     SARVAN SHARMA
                                 </h1>
-                                <p className="font-mono text-xs text-zinc-400 uppercase">
-                                    FILM DIRECTOR & CREATIVE HEAD
+                                <p className="font-mono text-xs text-zinc-400">
+                                    Film Director & Creative Head
                                 </p>
                             </div>
 
@@ -76,22 +76,22 @@ export default function About({ session }) {
 
                             <blockquote className="p-6 bg-zinc-900/50 border-l-2 border-indigo-500 rounded-r-xl font-mono text-xs text-zinc-300 space-y-2">
                                 <p>"Cinema isn't just about capturing light—it's about manipulating shadow to reveal emotion that words cannot reach."</p>
-                                <cite className="block text-[10px] text-indigo-400 uppercase tracking-widest">— DIRECTOR'S STATEMENT</cite>
+                                <cite className="block text-xs text-indigo-400 tracking-widest">— Director's Statement</cite>
                             </blockquote>
 
                             {/* Stats & Key Strengths Grid */}
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono">
                                 <div className="p-4 bg-black/40 border border-white/10 rounded-xl space-y-1">
                                     <span className="text-2xl font-black text-white">27+</span>
-                                    <p className="text-[10px] text-zinc-500 uppercase tracking-widest">REELS DIRECTED</p>
+                                    <p className="text-xs text-zinc-500 tracking-widest">Reels Directed</p>
                                 </div>
                                 <div className="p-4 bg-black/40 border border-white/10 rounded-xl space-y-1">
                                     <span className="text-2xl font-black text-white">4K RAW</span>
-                                    <p className="text-[10px] text-zinc-500 uppercase tracking-widest">ACQUIRED STANDARD</p>
+                                    <p className="text-xs text-zinc-500 tracking-widest">Acquired Standard</p>
                                 </div>
                                 <div className="p-4 bg-black/40 border border-white/10 rounded-xl sm:col-span-1 col-span-2 space-y-1">
                                     <span className="text-2xl font-black text-indigo-400">100%</span>
-                                    <p className="text-[10px] text-zinc-500 uppercase tracking-widest">IN-HOUSE CREATIVE</p>
+                                    <p className="text-xs text-zinc-500 tracking-widest">In-House Creative</p>
                                 </div>
                             </div>
                         </div>
@@ -103,12 +103,12 @@ export default function About({ session }) {
                 {/* ========================================================= */}
                 <section id="production" className="relative">
                     {/* Section Header Tag */}
-                    <div className="border-b border-white/10 pb-4 mb-12 flex justify-between items-baseline font-mono text-xs text-zinc-400 uppercase tracking-widest">
+                    <div className="border-b border-white/10 pb-4 mb-12 flex justify-between items-baseline font-mono text-xs text-zinc-400 tracking-widest">
                         <span className="flex items-center gap-2">
                             <Camera className="w-3.5 h-3.5 text-indigo-400" />
-                            STUDIO & PRODUCTION
+                            Studio & Production
                         </span>
-                        <span>TECHNICAL CAPABILITIES</span>
+                        <span>Technical Capabilities</span>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -117,9 +117,9 @@ export default function About({ session }) {
                             <div className="p-3 bg-indigo-950/40 border border-indigo-500/30 rounded-xl w-fit text-indigo-400 group-hover:scale-110 transition-transform">
                                 <Film className="w-6 h-6" />
                             </div>
-                            <h3 className="text-lg font-black uppercase tracking-wider text-white">
-                                PRINCIPAL CINEMATOGRAPHY
-                            </h3>
+                            <h2 className="text-lg font-black tracking-wider text-white">
+                                Principal Cinematography
+                            </h2>
                             <p className="text-xs text-zinc-400 leading-relaxed font-mono">
                                 Full-scale camera department operation. Utilizing high-dynamic-range cinema platforms, anamorphic glass, and tactical lighting design to deliver IMAX-ready visuals.
                             </p>
@@ -130,9 +130,9 @@ export default function About({ session }) {
                             <div className="p-3 bg-indigo-950/40 border border-indigo-500/30 rounded-xl w-fit text-indigo-400 group-hover:scale-110 transition-transform">
                                 <Disc className="w-6 h-6" />
                             </div>
-                            <h3 className="text-lg font-black uppercase tracking-wider text-white">
-                                POST & COLOR SUITE
-                            </h3>
+                            <h2 className="text-lg font-black tracking-wider text-white">
+                                Post & Color Suite
+                            </h2>
                             <p className="text-xs text-zinc-400 leading-relaxed font-mono">
                                 In-house DaVinci Resolve color grading suite. Custom film grain emulations, precision color science, and spatial audio mastering tailored to digital and theatrical releases.
                             </p>
@@ -143,9 +143,9 @@ export default function About({ session }) {
                             <div className="p-3 bg-indigo-950/40 border border-indigo-500/30 rounded-xl w-fit text-indigo-400 group-hover:scale-110 transition-transform">
                                 <Cpu className="w-6 h-6" />
                             </div>
-                            <h3 className="text-lg font-black uppercase tracking-wider text-white">
-                                GENERATIVE VISUAL FX
-                            </h3>
+                            <h2 className="text-lg font-black tracking-wider text-white">
+                                Generative Visual FX
+                            </h2>
                             <p className="text-xs text-zinc-400 leading-relaxed font-mono">
                                 Blending traditional live-action camera work with AI-assisted post-processing, virtual set extensions, and digital background enhancements.
                             </p>
@@ -162,19 +162,19 @@ export default function About({ session }) {
                 {/* ========================================================= */}
                 <section id="projects" className="relative">
                     {/* Section Header Tag */}
-                    <div className="border-b border-white/10 pb-4 mb-12 flex justify-between items-baseline font-mono text-xs text-zinc-400 uppercase tracking-widest">
+                    <div className="border-b border-white/10 pb-4 mb-12 flex justify-between items-baseline font-mono text-xs text-zinc-400 tracking-widest">
                         <span className="flex items-center gap-2">
                             <Layers className="w-3.5 h-3.5 text-indigo-400" />
-                            FEATURED INITIATIVES
+                            Featured Initiatives
                         </span>
-                        <span>PORTFOLIO SCOPE</span>
+                        <span>Portfolio Scope</span>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                         {/* Description */}
                         <div className="lg:col-span-7 space-y-6">
-                            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white">
-                                ARCHIVAL DISCIPLINE ACROSS MULTIPLE CATEGORIES
+                            <h2 className="text-3xl sm:text-4xl font-black tracking-wider text-white">
+                                Archival Discipline Across Multiple Categories
                             </h2>
                             <p className="text-zinc-300 text-sm leading-relaxed font-light">
                                 Our portfolio is categorized into high-impact film projects, narrative short films, and high-energy music video productions. Every project in our database is preserved with full technical specifications and high-bitrate video playback.
@@ -204,9 +204,9 @@ export default function About({ session }) {
                             </div>
 
                             <div className="space-y-2">
-                                <h3 className="text-xl font-black uppercase tracking-wider text-white">
-                                    EXPLORE THE ARCHIVE
-                                </h3>
+                                <h2 className="text-xl font-black tracking-wider text-white">
+                                    Explore the Archive
+                                </h2>
                                 <p className="font-mono text-xs text-zinc-400">
                                     Access our full streaming database with real-time category filtering.
                                 </p>
@@ -214,9 +214,9 @@ export default function About({ session }) {
 
                             <a
                                 href="#/work"
-                                className="inline-block w-full py-3.5 bg-white text-black font-mono font-bold text-xs uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-all shadow-lg"
+                                className="inline-block w-full py-3.5 bg-white text-black font-mono font-bold text-xs tracking-widest rounded-xl hover:bg-zinc-200 transition-all shadow-lg"
                             >
-                                OPEN SELECTED WORK STREAM ↗
+                                Open Selected Work Stream ↗
                             </a>
                         </div>
                     </div>

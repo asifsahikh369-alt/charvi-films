@@ -56,7 +56,7 @@ export default function CinemaModal({ project, onClose }) {
           <div className="flex items-center justify-between border-b border-white/10 px-6 py-4 bg-black/60 font-mono text-xs text-zinc-400">
             <div className="flex items-center gap-4">
               <span className="inline-block w-2 h-2 rounded-full bg-red-500 animate-ping" />
-              <span className="text-white font-bold tracking-widest uppercase">[REEL PLAYBACK // LIVE]</span>
+              <span className="text-white font-bold tracking-widest uppercase">[REEL PLAYBACK • LIVE]</span>
               <span className="hidden sm:inline text-zinc-600">|</span>
               <span className="hidden sm:inline text-zinc-500">REF: {project.id?.toString().slice(0, 8) || 'N°00'}</span>
             </div>

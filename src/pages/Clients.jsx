@@ -123,15 +123,15 @@ export default function Clients({ session }) {
                 {/* ========================================================= */}
                 <div className="border-b border-white/10 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div className="space-y-3">
-                        <div className="inline-flex items-center gap-2 font-mono text-xs text-indigo-400 bg-indigo-950/40 border border-indigo-500/30 px-3.5 py-1.5 rounded-full uppercase tracking-widest">
+                        <div className="inline-flex items-center gap-2 font-mono text-xs text-indigo-400 bg-indigo-950/40 border border-indigo-500/30 px-3.5 py-1.5 rounded-full tracking-widest">
                             <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-                            <span>[CLIENT ROSTER & COLLABORATORS]</span>
+                            <span>[Client Roster & Collaborators]</span>
                         </div>
-                        <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-wider text-white">
-                            INDUSTRY TALENT & CLIENTS
+                        <h1 className="text-4xl sm:text-6xl font-black tracking-wider text-white">
+                            Industry Talent & Clients
                         </h1>
-                        <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest">
-                            Directors // Bhojpuri Cinema Stars // Punjabi Artists // Mainstream Icons
+                        <p className="font-mono text-xs text-zinc-400 tracking-widest">
+                            Directors • Bhojpuri Cinema Stars • Punjabi Artists • Mainstream Icons
                         </p>
                     </div>
 
@@ -139,7 +139,7 @@ export default function Clients({ session }) {
                         <Award className="w-5 h-5 text-indigo-400 shrink-0" />
                         <div>
                             <p className="text-white font-bold uppercase">DIRECT TALENT BOOKING</p>
-                            <p className="text-[10px] text-zinc-500">sarvansharma14@gmail.com</p>
+                            <p className="text-xs text-zinc-400">sarvansharma14@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -153,12 +153,12 @@ export default function Clients({ session }) {
                         <button
                             key={cat}
                             onClick={() => setSelectedCategory(cat)}
-                            className={`px-4 py-2 rounded-full border text-[10px] tracking-wider uppercase transition-all duration-300 shrink-0 ${selectedCategory === cat
+                            className={`px-4 py-2 rounded-full border text-xs tracking-wider uppercase transition-all duration-300 shrink-0 ${selectedCategory === cat
                                     ? 'bg-indigo-600 border-indigo-400 text-white shadow-[0_0_20px_rgba(99,102,241,0.4)]'
                                     : 'bg-black/40 border-white/10 text-zinc-400 hover:text-white hover:border-white/20'
                                 }`}
                         >
-                            {cat} WORK //
+                            {cat} WORK
                         </button>
                     ))}
                 </div>
@@ -203,23 +203,23 @@ export default function Clients({ session }) {
                                                 <div className="p-3 rounded-full bg-white/5 border border-white/10 text-indigo-400 group-hover/img:scale-110 transition-transform">
                                                     <User className="w-6 h-6" />
                                                 </div>
-                                                <span className="text-[10px] text-zinc-500 uppercase tracking-widest">
+                                                <span className="text-xs text-zinc-500 uppercase tracking-widest">
                                                     [ PHOTO SLOT READY ]
                                                 </span>
                                             </div>
                                         )}
 
                                         {/* Category HUD Badge */}
-                                        <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-white/20 px-2.5 py-1 rounded-full font-mono text-[9px] uppercase tracking-widest text-indigo-300">
+                                        <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-white/20 px-2.5 py-1 rounded-full font-mono text-xs uppercase tracking-widest text-indigo-300">
                                             {client.industry}
                                         </div>
                                     </a>
 
                                     {/* Profile Header */}
                                     <div className="space-y-1 mb-3">
-                                        <h3 className="text-xl font-black uppercase tracking-wider text-white group-hover:text-indigo-200 transition-colors">
+                                        <h2 className="text-xl font-black tracking-wider text-white group-hover:text-indigo-200 transition-colors">
                                             {client.name}
-                                        </h3>
+                                        </h2>
                                         <p className="font-mono text-xs text-indigo-400 uppercase tracking-wider">
                                             {client.role}
                                         </p>
@@ -238,7 +238,7 @@ export default function Clients({ session }) {
                                         {client.tags.map((tag) => (
                                             <span
                                                 key={tag}
-                                                className="text-[9px] uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-zinc-400"
+                                                className="text-xs uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-zinc-400"
                                             >
                                                 {tag}
                                             </span>
@@ -246,8 +246,8 @@ export default function Clients({ session }) {
                                     </div>
 
                                     {/* Highlights Stat Bar */}
-                                    <div className="flex justify-between items-center text-[10px] bg-black/60 p-2.5 rounded-lg border border-white/5">
-                                        <span className="text-zinc-500 uppercase">PORTFOLIO HIGHLIGHT:</span>
+                                    <div className="flex justify-between items-center text-xs bg-black/60 p-2.5 rounded-lg border border-white/5">
+                                        <span className="text-zinc-500">Portfolio Highlight:</span>
                                         <span className="text-emerald-400 font-bold flex items-center gap-1">
                                             <CheckCircle className="w-3 h-3" />
                                             {client.stats}
@@ -258,7 +258,7 @@ export default function Clients({ session }) {
                                     {client.email && (
                                         <a
                                             href={`mailto:${client.email}`}
-                                            className="w-full py-2 bg-indigo-600/80 hover:bg-indigo-600 text-white font-mono text-[10px] uppercase tracking-widest rounded-lg flex items-center justify-center gap-2 border border-indigo-400/50 transition-colors"
+                                            className="w-full py-2 bg-indigo-600/80 hover:bg-indigo-600 text-white font-mono text-xs uppercase tracking-widest rounded-lg flex items-center justify-center gap-2 border border-indigo-400/50 transition-colors"
                                         >
                                             <Mail className="w-3.5 h-3.5" />
                                             <span>CONTACT {client.name.split(' ')[0]}</span>
@@ -276,12 +276,12 @@ export default function Clients({ session }) {
                 {/* ========================================================= */}
                 <section className="bg-gradient-to-r from-zinc-900 via-indigo-950/40 to-zinc-900 border border-indigo-500/30 p-8 sm:p-12 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
                     <div className="space-y-3 max-w-xl">
-                        <div className="flex items-center gap-2 font-mono text-xs text-indigo-400 uppercase tracking-widest">
+                        <div className="flex items-center gap-2 font-mono text-xs text-indigo-400 tracking-widest">
                             <Mail className="w-4 h-4" />
-                            <span>[DIRECT TALENT & PRODUCTION REQUISITION]</span>
+                            <span>[Direct Talent & Production Requisition]</span>
                         </div>
-                        <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-wider text-white">
-                            WANT TO COLLABORATE OR BOOK TALENT?
+                        <h2 className="text-2xl sm:text-4xl font-black tracking-wider text-white">
+                            Want to Collaborate or Book Talent?
                         </h2>
                         <p className="text-xs sm:text-sm text-zinc-300 font-light leading-relaxed">
                             For direct client inquiries, starcast bookings, and co-productions across Bhojpuri, Punjabi, and Bollywood cinema, reach out directly to our production line.
@@ -291,12 +291,12 @@ export default function Clients({ session }) {
                     <div className="flex flex-col gap-3 font-mono text-xs w-full sm:w-auto shrink-0">
                         <a
                             href="mailto:sarvansharma14@gmail.com"
-                            className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-all text-center shadow-xl"
+                            className="px-8 py-4 bg-white text-black font-bold tracking-widest rounded-xl hover:bg-zinc-200 transition-all text-center shadow-xl"
                         >
-                            EMAIL: sarvansharma14@gmail.com ↗
+                            Email: sarvansharma14@gmail.com ↗
                         </a>
-                        <span className="text-[10px] text-zinc-500 text-center uppercase tracking-widest">
-                            RESPONSE TIME: WITHIN 24 HOURS
+                        <span className="text-xs text-zinc-500 text-center tracking-widest">
+                            Response Time: Within 24 Hours
                         </span>
                     </div>
                 </section>

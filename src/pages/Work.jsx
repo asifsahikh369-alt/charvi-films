@@ -88,14 +88,14 @@ export default function Work({ session }) {
                             className="inline-flex items-center gap-2 font-mono text-xs text-indigo-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full border border-white/10 hover:border-indigo-500/50 mb-3 group"
                         >
                             <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
-                            <span>[← RETURN TO HOME]</span>
+                            <span>Return to Home</span>
                         </Link>
 
-                        <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-wider text-white">
-                            SELECTED ARCHIVE
+                        <h1 className="text-3xl sm:text-5xl font-black tracking-wider text-white">
+                            Selected Archive
                         </h1>
-                        <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest">
-                            Full Cinematic Catalogue // Filtered Stream
+                        <p className="font-mono text-xs text-zinc-400 tracking-widest">
+                            Full Cinematic Catalogue • Filtered Stream
                         </p>
                     </div>
 
@@ -121,7 +121,7 @@ export default function Work({ session }) {
                                         : 'bg-black/40 border-white/10 text-zinc-400 hover:text-white hover:border-white/20'
                                     }`}
                             >
-                                {cat} //
+                                {cat}
                             </button>
                         ))}
                     </div>
@@ -165,7 +165,7 @@ export default function Work({ session }) {
                                 onClick={() => { setSearchTerm(''); setSelectedCategory('ALL'); }}
                                 className="text-[10px] text-indigo-400 hover:underline uppercase"
                             >
-                                RESET CATEGORY FILTERS //
+                                RESET CATEGORY FILTERS
                             </button>
                         )}
                     </div>
@@ -197,16 +197,16 @@ export default function Work({ session }) {
                                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                                             <div className="px-4 py-2 rounded-full bg-black/70 backdrop-blur-md border border-indigo-500/40 text-indigo-300 font-mono text-[10px] tracking-widest uppercase flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-ping" />
-                                                PLAY REEL //
+                                                PLAY REEL
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="mt-4 px-1">
                                         <div className="flex items-center justify-between gap-4">
-                                            <h3 className="text-sm font-black uppercase tracking-wider text-zinc-300 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+                                            <h2 className="text-sm font-black tracking-wider text-zinc-300 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
                                                 {project.title}
-                                            </h3>
+                                            </h2>
                                             <span className="text-[10px] font-mono text-zinc-500 group-hover:text-indigo-400 lowercase shrink-0 transition-colors">
                                                 /{project.categories?.slug || project.categories?.name || 'general'}
                                             </span>

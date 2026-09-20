@@ -262,7 +262,7 @@ export default function Home({ session }) {
                             playShutterClick();
                             setActiveProject({
                                 id: 'showreel-2026',
-                                title: 'CHARVI FILMS // 2026 MASTER SHOWREEL',
+                                title: 'CHARVI FILMS • 2026 MASTER SHOWREEL',
                                 description: 'Compilation of principal cinematography, film reels, and musical visual projects.',
                                 video_url: 'https://vimeo.com/76979871', // Default showreel URL
                                 categories: { name: 'FEATURED REEL' }
